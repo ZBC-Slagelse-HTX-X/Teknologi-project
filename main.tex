@@ -1,12 +1,16 @@
 
 \documentclass[12pt, a4paper]{article}
+\usepackage{lmodern} % Indstiller skrifttypen til latin modern
 \usepackage{amssymb, amsmath, amsthm} % matematikfunktionalitet
-\usepackage[danish]{babel}
-\usepackage{lipsum}
-\usepackage[margin=2.5cm]{geometry}
-\usepackage{parskip}
-\usepackage{graphicx} %Titlepage
-\usepackage{hyperref} %Titlepage
+\usepackage[danish]{babel} % Tilføjer dansk-sprog understøttelse
+\usepackage{lipsum} % Tilføjer lipsum-evne
+\usepackage[margin=2.5cm]{geometry} % Justerer margener
+\usepackage{parskip} % Laver ny linje i stedet for tabulering ved nyt afsnit
+\usepackage{graphicx} %Titlepage - graphic understøttelse
+\usepackage[colorlinks = true,linkcolor = blue,urlcolor  = blue,citecolor = blue,anchorcolor = blue]{hyperref} %Titlepage - ændrer formateringen af links
+\usepackage{comment} % Kommentar package (for citationer)
+\usepackage[backend=biber,style=alphabetic,sorting=ynt]{biblatex} % Bibliografi-package
+    \addbibresource{bibliography.bib}
 
 \title{title}
 \author{mmmm}
@@ -18,4 +22,6 @@
     \include{kapitel_1/kapitel_1.tex}
     \include{kapitel_2/kapitel_2.tex}
     \include{kapitel_3/kapitel_3.tex}
+    \medskip
+    \printbibliography[heading=bibintoc,title={Litteraturliste}]
 \end{document}
