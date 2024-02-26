@@ -2,18 +2,18 @@
 \documentclass[12pt, a4paper]{article}
 %% Packages
 % Layout 
-\usepackage{parskip} % Laver ny linje i stedet for tabulering ved nyt afsnit
-\usepackage[margin=2.5cm]{geometry} % Justerer margener
+\usepackage{parskip} % Changes parskip from being indent-based to adding vertical space
+\usepackage[margin=2.5cm]{geometry} % Adjust margins to comply with 2,5cm standard
 
 % Font management (for math and normal text)
-\usepackage{lmodern} % Indstiller skrifttypen til latin modern
-\usepackage{amssymb, amsmath, amsthm} % matematikfunktionalitet
+\usepackage{lmodern} % Changes font to Latin Modern
+\usepackage{amssymb, amsmath, amsthm} % Adds math functionality, fonts and environments
 
 % Bibliography and comment management
-\usepackage[backend=biber,style=nature]{biblatex} % Bibliografi-package
-\addbibresource{bibliography.bib}
-\usepackage{csquotes}
-\usepackage{comment} % Kommentar package (for citationer)
+\usepackage[backend=biber,style=nature]{biblatex} % Bibliography management
+\addbibresource{bibliography.bib} % Sets the bibliography-file
+\usepackage{csquotes} % Adds babel-biliography compatability 
+\usepackage{comment} % Comments package for citation-purposes
 
 % Appendix, attachments management
 \usepackage[toc,page]{appendix} %
@@ -21,22 +21,22 @@
 \renewcommand{\appendixpagename}{Bilag}
 
 % miscellaneous
-\usepackage[danish]{babel} % Tilføjer dansk-sprog understøttelse
-\usepackage{lipsum} % Tilføjer lipsum-evne
-\usepackage{graphicx} %Titlepage - graphic understøttelse
-\usepackage[colorlinks = true,linkcolor = blue,urlcolor  = blue,citecolor = blue,anchorcolor = blue]{hyperref} %Titlepage - ændrer formateringen af links
+\usepackage[danish]{babel} % Multi-lingual support - danish
+\usepackage{lipsum} % Adds lipsum functionality
+\usepackage{graphicx} %Titlepage - graphic support
+\usepackage[colorlinks = true,linkcolor = blue,urlcolor  = blue,citecolor = blue,anchorcolor = blue]{hyperref} %Titlepage - customizes hyperlinks
 
 %%% Document management
 \begin{document}
 \include{titlepage/titlepage.tex}
     \newpage
     \tableofcontents
-    \include{kapitel_1/kapitel_1.tex}
-    \include{kapitel_2/kapitel_2.tex}
-    \include{kapitel_3/kapitel_3.tex}
+    \include{section_1/section_1.tex}
+    \include{section_2/section_2.tex}
+    \include{section_3/section_3.tex}
     \medskip
     \printbibliography[heading=bibintoc,title={Litteraturliste}]
     \begin{appendices}
-        \input{appendiks/projektbeskrivelse.tex}
+        \input{appendix/project-description.tex}
     \end{appendices}
 \end{document}
