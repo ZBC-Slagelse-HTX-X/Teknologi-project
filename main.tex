@@ -19,12 +19,15 @@
 \usepackage[toc,page]{appendix} %
 \renewcommand{\appendixtocname}{Bilag}
 \renewcommand{\appendixpagename}{Bilag}
+\usepackage{pdfpages} % Including PDF-pages
 
 % miscellaneous
 \usepackage[danish]{babel} % Multi-lingual support - danish
 \usepackage{lipsum} % Adds lipsum functionality
 \usepackage{graphicx} %Titlepage - graphic support
 \usepackage[colorlinks = true,linkcolor = blue,urlcolor  = blue,citecolor = blue,anchorcolor = blue]{hyperref} %Titlepage - customizes hyperlinks
+\usepackage{pgfgantt} % Gantt-Diagram management
+
 
 %%% Document management
 \begin{document}
@@ -37,6 +40,7 @@
     \medskip
     \printbibliography[heading=bibintoc,title={Litteraturliste}]
     \begin{appendices}
-        \input{appendix/project-description.tex}
+        \section{Projektbeskrivelse}
+        \includepdf{appendix/Project description/project-description.pdf}
     \end{appendices}
 \end{document}
