@@ -7,6 +7,7 @@ import Skema from './ui/skema/skema'
 export default function Home() {
   return ( 
     <main className='bg-slate-100 flex justify-start'>
+
       <Navbar_client>
         <Navbar_server />
       </Navbar_client>
