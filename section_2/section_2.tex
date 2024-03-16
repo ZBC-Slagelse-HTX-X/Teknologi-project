@@ -1,13 +1,20 @@
 \section{Projektstyring}
+    \newgeometry{margin=1.5cm}
     \begin{landscape}
         \subsection{Tidsplan}
-            \input{figures/Timeplan/gantt-diagram.tex}
+            \begin{center}
+                \input{section_2/figures/timeplan.tex}            
+            \end{center}
     \end{landscape}
+    \restoregeometry
     \subsection{Rollefordeling}
-        \begin{tabular}{r|r|r}
-            Navn & Ansvarsområde &  \\ \hline
-            Jeppe &  Kodning \\ \hline
-            Alexander  & $\mathrm{\latex}$ \& opstilling \\ \hline
-            Andreas & Hardware   \\ \hline
-            David &  Logging \\ \hline
-        \end{tabular}
+\begin{table}
+            \begin{tabular}{r|r}
+                \hline
+                Navn       & Ansvarsområde              \\ \hline \hline
+                Jeppe      & Kodning                    \\ \hline
+                Alexander  & \LaTeX \space\& opstilling \\ \hline
+                Andreas    & Hardware                   \\ \hline
+                David      & Logging                    \\ \hline
+            \end{tabular}
+\end{table}
