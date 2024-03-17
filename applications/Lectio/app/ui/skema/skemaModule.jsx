@@ -1,6 +1,6 @@
+import './skema.css';
 import { ChatBubbleOvalLeftIcon } from "@heroicons/react/24/outline";
 import { PencilSquareIcon } from "@heroicons/react/24/outline";
-
 
 
 export default function skemaModule( args ) {
@@ -11,13 +11,29 @@ export default function skemaModule( args ) {
         );
     } else {
         return (
-        <div className="bg-[#9CCEFF] border-l-[10px] border-l-[#1E90FF] p-4 rounded-lg max-w-[275px] max-h-[88px] flex justify-between cursor-pointer hover:opacity-80">
+        <div className="bg-[#9CCEFF] border-l-[10px] border-l-[#1E90FF] p-4 rounded-lg max-w-[275px] max-h-[88px] flex justify-between cursor-pointer hover:opacity-80 group">
+            
             <div className="flex flex-col text-[#0D3F70] justify-center">
                 <span className="font-bold text-xl">S 1x { args.subject }</span>
                 <span>{ args.teacher }</span>
                 <span>{ args.room }</span>
             </div>
-            
+
+            {/* Tooltip */}
+            {/* ERROR, outputs "test" with a scale of 0. It is the reason that the grid is broken. */}
+            {/* MISSING homework tooltip */}
+            {(() => {
+                    if ( args.note != '' ) {
+                        return (
+                            <span className='sidebar-tooltip group-hover:scale-100'>test</span>
+                        );
+                    } else {
+                        return (
+                            ''
+                        );
+                    }
+                })()} 
+
             <div className="text-[#0D3F70] flex flex-row float-right">
                 <div>
                     { (() => {
