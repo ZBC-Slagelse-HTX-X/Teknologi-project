@@ -19,9 +19,13 @@
 
 % Appendix, attachments management
 \usepackage[toc,page]{appendix} %
-\renewcommand{\appendixtocname}{Bilag}
-\renewcommand{\appendixpagename}{Bilag}
+\renewcommand{\appendixtocname}{Appendiks}
+\renewcommand{\appendixpagename}{Appendiks}
 \usepackage{pdfpages} % Including PDF-pages
+    \usepackage{eso-pic}
+    \usepackage{atbegshi}
+    \usepackage{ifthen}
+    \usepackage{calc}
 
 % miscellaneous
 \usepackage[danish]{translator}
@@ -35,16 +39,30 @@
 
 %%% Document management
 \begin{document}
-\include{titlepage/titlepage.tex}
+%% Front matter
+    \pagenumbering{roman}
+    \input{titlepage/titlepage.tex}
+    \newpage
+    \input{preface/preface.tex}
     \newpage
     \tableofcontents
-    \include{section_1/section_1.tex}
-    \include{section_2/section_2.tex}
-    \include{section_3/section_3.tex}
-    \medskip
+    \newpage
+%% Main body
+    \pagenumbering{arabic}
+    \input{section_1/section_1.tex} \newpage
+    \input{section_2/section_2.tex} \newpage
+    \input{section_3/section_3.tex} \newpage
+    \newpage
+%% Back matter
     \printbibliography[heading=bibintoc,title={Litteraturliste}]
-    \begin{appendices}
-        \section{Projektbeskrivelse}
-        \includepdf{appendix/Project description/project-description.pdf}
+    \begin{appendices} \newpage
+        \section{Projektbeskrivelse} \newpage
+        \renewcommand*{\thepage}{A\arabic{page}}
+        \includepdf[pages=-,delta=5 5,frame=true,landscape=true,nup=1x2,pagecommand={\thispagestyle{plain}}]{appendix/Project description/project-description.pdf}
+        \renewcommand*{\thepage}{\arabic{page}}
+        \section{Logbog} \newpage
+        \renewcommand*{\thepage}{B\arabic{page}}
+        \includepdf[pages=-,delta=5 5,frame=true,landscape=true,nup=1x2,pagecommand={\thispagestyle{plain}}]{Log/log.pdf}
+        \renewcommand*{\thepage}{\arabic{page}}
     \end{appendices}
 \end{document}
