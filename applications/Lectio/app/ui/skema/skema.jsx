@@ -57,17 +57,21 @@ const scheduleFri = [
 ];
 
 
+
 export default function skema() {
+    const weekNumbers = ["18/3", "19/3", "20/3", "21/3", "22/3"];
     
     const today = new Date();
     const month = today.getMonth()+1;
     const year = today.getFullYear();
     const date = today.getDate();
     const currentDate = month + "/" + date + "/" + year;
+    
+    const weekDate = date + "/" + month;
 
     var currentWeekNumber = require('current-week-number');
 
-
+    
     return (
         <div className="px-10">
             
@@ -80,11 +84,72 @@ export default function skema() {
                         <thead>
                             <tr className="h-20">
                                 <th></th>
-                                <th> <span className="px-10 p-4 rounded-xl bg-slate-200 font-normal">Mandag <strong>11</strong></span> </th>
-                                <th> <span className="px-10 p-4 rounded-xl bg-slate-200 font-normal">Tirsdag <strong>12</strong></span> </th>
-                                <th> <span className="px-10 p-4 rounded-xl bg-[#1E90FF] text-white font-normal">Onsdag <strong>13</strong></span> </th>
-                                <th> <span className="px-10 p-4 rounded-xl bg-slate-200 font-normal">Torsdag <strong>14</strong></span> </th>
-                                <th> <span className="px-10 p-4 rounded-xl bg-slate-200 font-normal">Fredag <strong>14</strong></span> </th>
+                                <th> 
+                                { (() => {
+                                        if (weekNumbers[0] == weekDate) {
+                                            return (
+                                                <span className="px-10 p-4 rounded-xl bg-[#1E90FF] text-white font-normal">Mandag <strong>{ weekNumbers[0] }</strong></span> 
+                                            );
+                                        } else {
+                                            return (
+                                                <span className="px-10 p-4 rounded-xl bg-slate-200 font-normal">Mandag <strong>{ weekNumbers[0] }</strong></span>
+                                            );
+                                        }
+
+                                    })()}
+                                </th>
+                                <th> 
+                                { (() => {
+                                    if (weekNumbers[1] == weekDate) {
+                                        return (
+                                            <span className="px-10 p-4 rounded-xl bg-[#1E90FF] text-white font-normal">Tirsdag <strong>{ weekNumbers[1] }</strong></span> 
+                                        );
+                                    }   else {
+                                        return (
+                                            <span className="px-10 p-4 rounded-xl bg-slate-200 font-normal">Tirsdag <strong>{ weekNumbers[1] }</strong></span> 
+                                        );
+                                    }
+                                }) ()}
+                                </th>
+                                <th> 
+                                { (() => {
+                                    if (weekNumbers[2] == weekDate) {
+                                        return (
+                                            <span className="px-10 p-4 rounded-xl bg-[#1E90FF] text-white font-normal">Onsdag <strong>{ weekNumbers[2] }</strong></span> 
+                                        );
+                                    }   else {
+                                        return (
+                                            <span className="px-10 p-4 rounded-xl bg-slate-200 font-normal">Onsdag <strong>{ weekNumbers[2] }</strong></span> 
+                                        );
+                                    }
+                                }) ()}
+                                </th>
+                                <th> 
+                                { (() => {
+                                    if (weekNumbers[3] == weekDate) {
+                                        return (
+                                            <span className="px-10 p-4 rounded-xl bg-[#1E90FF] text-white font-normal">Torsdag <strong>{ weekNumbers[3] }</strong></span> 
+                                        );
+                                    }   else {
+                                        return (
+                                            <span className="px-10 p-4 rounded-xl bg-slate-200 font-normal">Torsdag <strong>{ weekNumbers[3] }</strong></span> 
+                                        );
+                                    }
+                                }) ()}
+                                </th>
+                                <th> 
+                                { (() => {
+                                    if (weekNumbers[4] == weekDate) {
+                                        return (
+                                            <span className="px-10 p-4 rounded-xl bg-[#1E90FF] text-white font-normal">Fredag <strong>{ weekNumbers[4] }</strong></span> 
+                                        );
+                                    }   else {
+                                        return (
+                                            <span className="px-10 p-4 rounded-xl bg-slate-200 font-normal">Fredag <strong>{ weekNumbers[4] }</strong></span> 
+                                        );
+                                    }
+                                }) ()}
+                                </th>
                             </tr>
                         </thead>
                         <tbody>

@@ -6,56 +6,56 @@ export default async function navbar_server() {
         <div className="mx-2 font-medium">       
             <Link href="/"> 
                 <div>
-                    <span className="flex flex-row items-center hover:bg-slate-100 active:bg-[#1E90FF] px-2 rounded-full"><i><HomeIcon className="w-8 h-8 my-3 mx-1"/></i> Homepage</span>
+                    <span className="flex flex-row items-center hover:bg-slate-100 active:bg-[#1E90FF] px-2 rounded-full"><i><HomeIcon className="w-8 h-8 my-3 mx-1"/></i> Forside</span>
                 </div>
             </Link>
             
-            <Link href="/"> 
+            <Link href="/skema"> 
                 <div>
-                    <span className="flex flex-row items-center hover:bg-slate-100 px-2 rounded-full"><i><CalendarDaysIcon className="w-8 h-8 my-3 mx-1"/></i> Schedule</span>
+                    <span className="flex flex-row items-center hover:bg-slate-100 px-2 rounded-full"><i><CalendarDaysIcon className="w-8 h-8 my-3 mx-1"/></i> Skema</span>
                 </div>
             </Link>
 
             <Link href="/"> 
                 <div>
-                    <span className="flex flex-row items-center hover:bg-slate-100 px-2 rounded-full"><i><BriefcaseIcon className="w-8 h-8 my-3 mx-1"/></i> Homework</span>
+                    <span className="flex flex-row items-center hover:bg-slate-100 px-2 rounded-full"><i><BriefcaseIcon className="w-8 h-8 my-3 mx-1"/></i> Lektier</span>
                 </div>
             </Link>
             <Link href="/"> 
                 <div>
-                    <span className="flex flex-row items-center hover:bg-slate-100 px-2 rounded-full"><i><BookmarkIcon className="w-8 h-8 my-3 mx-1"/></i> Assignments</span>
+                    <span className="flex flex-row items-center hover:bg-slate-100 px-2 rounded-full"><i><BookmarkIcon className="w-8 h-8 my-3 mx-1"/></i> Opgaver</span>
                 </div>
             </Link>
             <Link href="/"> 
                 <div>
-                    <span className="flex flex-row items-center hover:bg-slate-100 px-2 rounded-full"><i><EnvelopeIcon className="w-8 h-8 my-3 mx-1"/></i> Messages</span>
+                    <span className="flex flex-row items-center hover:bg-slate-100 px-2 rounded-full"><i><EnvelopeIcon className="w-8 h-8 my-3 mx-1"/></i> Beskeder</span>
                 </div>
             </Link>
             <Link href="/"> 
                 <div>
-                    <span className="flex flex-row items-center hover:bg-slate-100 px-2 rounded-full"><i><HomeIcon className="w-8 h-8 my-3 mx-1"/></i> Homepage</span>
+                    <span className="flex flex-row items-center hover:bg-slate-100 px-2 rounded-full"><i><HomeIcon className="w-8 h-8 my-3 mx-1"/></i> Dokumenter</span>
                 </div>
             </Link>
             
             <Link href="/"> 
                 <div>
-                    <span className="flex flex-row items-center hover:bg-slate-100 px-2 rounded-full"><i><CalendarDaysIcon className="w-8 h-8 my-3 mx-1"/></i> Schedule</span>
+                    <span className="flex flex-row items-center hover:bg-slate-100 px-2 rounded-full"><i><CalendarDaysIcon className="w-8 h-8 my-3 mx-1"/></i> Karakterer</span>
                 </div>
             </Link>
 
             <Link href="/"> 
                 <div>
-                    <span className="flex flex-row items-center hover:bg-slate-100 px-2 rounded-full"><i><BriefcaseIcon className="w-8 h-8 my-3 mx-1"/></i> Homework</span>
+                    <span className="flex flex-row items-center hover:bg-slate-100 px-2 rounded-full"><i><BriefcaseIcon className="w-8 h-8 my-3 mx-1"/></i> Fravær</span>
                 </div>
             </Link>
             <Link href="/"> 
                 <div>
-                    <span className="flex flex-row items-center hover:bg-slate-100 px-2 rounded-full"><i><BookmarkIcon className="w-8 h-8 my-3 mx-1"/></i> Assignments</span>
+                    <span className="flex flex-row items-center hover:bg-slate-100 px-2 rounded-full"><i><BookmarkIcon className="w-8 h-8 my-3 mx-1"/></i> Spørgeskema</span>
                 </div>
             </Link>
             <Link href="/"> 
                 <div>
-                    <span className="flex flex-row items-center hover:bg-slate-100 px-2 rounded-full"><i><EnvelopeIcon className="w-8 h-8 my-3 mx-1"/></i> Messages</span>
+                    <span className="flex flex-row items-center hover:bg-slate-100 px-2 rounded-full"><i><EnvelopeIcon className="w-8 h-8 my-3 mx-1"/></i> Profil</span>
                 </div>
             </Link>
 
