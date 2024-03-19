@@ -5,7 +5,7 @@ import SkemaModule from "./skemaModule";
 const scheduleMon = [
     { subject: 'MA', teacher: 'jacs', room: 'SLWI-4110', key: 1, visibility: 'show', note: 'Plan: Potensfunktioner, eksponentiel vækst', homework: '03_opg_polynomier.ipynb' },
     { subject: 'MA', teacher: 'jacs', room: 'SLWI-4110', key: 2, visibility: 'show', note: '', homework: '' },
-    { subject: 'Fy', teacher: 'hnpo', room: 'SLWI-4110', key: 3, visibility: 'show', note: 'Ingen lektier. Vi ser på hvad vi skal i timen. Forberedelse til SO2 i næste uge.', homework: '' },
+    { subject: 'Fy', teacher: 'hnpo', room: 'SLWI-4110', key: 3, visibility: 'show', note: 'Ingen lektier. Vi ser på hvad vi skal i timen. Forberedelse til SO2 i næste uge. we  we jwnkjnkjn kjnkjnkjn ', homework: '' },
     { subject: 'Fy', teacher: 'hnpo', room: 'SLWI-4110', key: 4, visibility: 'show', note: '', homework: '' },
     { subject: 'sa', teacher: 'mmje', room: 'SLWI-4110', key: 5, visibility: 'show', note: 'Det senmoderne samfunds kendetegn ', homework: '' },
     { subject: 'So', teacher: 'kibo', room: 'SLWI-4110', key: 6, visibility: 'show', note: '', homework: 'Hold øje med, hvordan du tager noter i de forskellige fag.' },

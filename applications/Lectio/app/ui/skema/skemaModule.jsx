@@ -20,20 +20,37 @@ export default function skemaModule( args ) {
             </div>
 
             {/* Tooltip */}
-            {/* ERROR, outputs "test" with a scale of 0. It is the reason that the grid is broken. */}
-            {/* MISSING homework tooltip */}
-            {(() => {
+        <div className='absolute'>
+
+            <div className='max-w-[275px] flex flex-col flex-wrap mt-16'>
+                <div>
+                {(() => {
                     if ( args.note != '' ) {
                         return (
-                            <span className='sidebar-tooltip group-hover:scale-100'>test</span>
-                        );
-                    } else {
-                        return (
-                            ''
-                        );
-                    }
+                            <span className='sidebar-tooltip group-hover:scale-100 relative left-[-30px]'><h1 className='font-black'>note:</h1>&nbsp;<span>{ args.note }</span></span>
+                            );
+                        } else {
+                            return (
+                                ''
+                                );
+                            }
                 })()} 
-
+                </div>
+                <div>
+                {(() => {
+                    if ( args.homework != '' ) {
+                        return (
+                            <span className='sidebar-tooltipH group-hover:scale-100 relative left-[-30px]'><h1 className='font-black'>Lektier:</h1>&nbsp;<span>{ args.homework }</span> </span>
+                            );
+                        } else {
+                            return (
+                                ''
+                                );
+                            }
+                        })()} 
+                </div>
+            </div>
+            </div>
             <div className="text-[#0D3F70] flex flex-row float-right">
                 <div>
                     { (() => {
