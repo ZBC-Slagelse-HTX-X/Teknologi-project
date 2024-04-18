@@ -19,7 +19,7 @@ export default function skemaModule( args ) {
                 <span>{ args.room }</span>
             </div>
 
-            {/* Tooltip */}
+        {/* Tooltip */}
         <div className='absolute'>
 
             <div className='max-w-[275px] flex flex-col flex-wrap mt-16'>
@@ -27,7 +27,7 @@ export default function skemaModule( args ) {
                 {(() => {
                     if ( args.note != '' ) {
                         return (
-                            <span className='sidebar-tooltip group-hover:scale-100 relative left-[-30px]'><h1 className='font-black'>note:</h1>&nbsp;<span>{ args.note }</span></span>
+                            <span className='sidebar-tooltip group-hover:scale-100 relative left-[-30px]'><h1 className='font-black'>Note:</h1>&nbsp;<span>{ args.note }</span></span>
                             );
                         } else {
                             return (

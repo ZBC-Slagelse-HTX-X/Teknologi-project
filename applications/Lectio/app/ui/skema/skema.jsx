@@ -59,7 +59,7 @@ const scheduleFri = [
 
 
 export default function skema() {
-    const weekNumbers = ["18/3", "19/3", "20/3", "21/3", "22/3"];
+    const weekNumbers = ["8/4", "9/4", "10/4", "11/4", "12/4"];
     
     const today = new Date();
     const month = today.getMonth()+1;
@@ -71,7 +71,7 @@ export default function skema() {
 
     var currentWeekNumber = require('current-week-number');
 
-    
+
     return (
         <div className="px-10">
             

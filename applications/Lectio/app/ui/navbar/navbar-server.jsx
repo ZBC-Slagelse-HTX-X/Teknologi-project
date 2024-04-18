@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { BookmarkIcon, BriefcaseIcon, CalendarDaysIcon, EnvelopeIcon, HomeIcon } from '@heroicons/react/24/outline'
+import { BookmarkIcon, BriefcaseIcon, CalendarDaysIcon, EnvelopeIcon, HomeIcon, KeyIcon } from '@heroicons/react/24/outline'
 
 export default async function navbar_server() {
     return (
@@ -43,22 +43,13 @@ export default async function navbar_server() {
                 </div>
             </Link>
 
-            <Link href="/"> 
-                <div>
-                    <span className="flex flex-row items-center hover:bg-slate-100 px-2 rounded-full"><i><BriefcaseIcon className="w-8 h-8 my-3 mx-1"/></i> Fravær</span>
-                </div>
-            </Link>
-            <Link href="/"> 
-                <div>
-                    <span className="flex flex-row items-center hover:bg-slate-100 px-2 rounded-full"><i><BookmarkIcon className="w-8 h-8 my-3 mx-1"/></i> Spørgeskema</span>
-                </div>
-            </Link>
-            <Link href="/"> 
-                <div>
-                    <span className="flex flex-row items-center hover:bg-slate-100 px-2 rounded-full"><i><EnvelopeIcon className="w-8 h-8 my-3 mx-1"/></i> Profil</span>
-                </div>
-            </Link>
 
+        <div>
+            <Link href="/lokaler"> 
+                <div>
+                    <span className="flex flex-row items-center hover:bg-slate-100 px-2 rounded-full"><i><KeyIcon className="w-8 h-8 my-3 mx-1"/></i> Lokaler</span>
+                </div>
+            </Link>
 
             <Link href="/">
             <div className='px-2 py-[10px] hover:bg-[#f3f3f3] hover:cursor-pointer rounded absolute bottom-2 z-50'>
@@ -72,6 +63,7 @@ export default async function navbar_server() {
               </span>
             </div>
           </Link>
+        </div>
         </div>
     );
 }
