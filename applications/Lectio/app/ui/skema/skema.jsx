@@ -1,5 +1,5 @@
 import SkemaModule from "./skemaModule";
-
+import Link from "next/link";
 
 // Monday
 const scheduleMon = [
@@ -67,13 +67,16 @@ export default function skema() {
     const date = today.getDate();
     const currentDate = month + "/" + date + "/" + year;
     
+    const currentFormattedDate = month + "-" + date + "-" + year; 
+    
     const weekDate = date + "/" + month;
 
     var currentWeekNumber = require('current-week-number');
 
-
+    
     return (
         <div className="px-10">
+            <Link href={`/${scheduleMon[1].subject + '-' + currentFormattedDate}`}></Link>
             
             <div className="container">
                 <div className="w-[80vw] h-[100vh] py-10">
