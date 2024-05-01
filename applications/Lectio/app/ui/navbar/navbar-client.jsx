@@ -6,7 +6,7 @@ import ProfileImage from '../navbar/profileImage.jpeg';
 
 export default function navbar_client( { children } ) {
     return (
-        <nav className="h-screen min-w-[225px] flex  flex-col bg-white z-50">
+        <nav className="h-screen min-w-[225px] max-w-[300px] flex  flex-col bg-white z-50">
             <div className="flex flex-row pl-4 pt-4 pr-3">
                 <div className="">
                     <Image src={ ProfileImage } width="100" height="100"/> 
