@@ -15,15 +15,15 @@ const sampleMessage = {
 export default function besked() {
 
     return (
-        <div className="p-3 flex max-h-[104px] bg-slate-100 rounded-lg mt-5">
+        <div className="p-3 flex max-h-[104px] bg-slate-200 rounded-xl mt-5 text-[#424242]">
             <div><Image src={ProfileImage} height={100} width={100} className="rounded-full h-20 w-20"></Image></div>
                 
             <div className="flex justify-between w-full">
-                <div className="pl-4 flex">
+                <div className="pl-4 flex items-center">
                     <ul className="max-w-sm">
                         <li>{sampleMessage.author}</li>
-                        <li>{sampleMessage.class}</li>
-                        <li className="max-h-[24px] overflow-hidden">{sampleMessage.messageTitle}</li>
+                        <li className='text-sm'>{sampleMessage.class}</li>
+                        <li className="max-h-[24px] overflow-hidden text-sm">{sampleMessage.messageTitle}</li>
                     </ul>
                 </div>
                 <div className="flex items-center">
