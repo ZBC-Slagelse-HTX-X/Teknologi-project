@@ -59,7 +59,8 @@ const scheduleFri = [
 
 
 export default function skema() {
-    const weekNumbers = ["8/4", "9/4", "10/4", "11/4", "12/4"];
+    const weekNumbers = ["29/4", "30/4", "1/5", "2/5", "3/5"];
+
     
     const today = new Date();
     const month = today.getMonth()+1;
