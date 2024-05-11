@@ -19,9 +19,9 @@ export default function skemaModule( args ) {
                 <span>{ args.room }</span>
             </div>
 
+
         {/* Tooltip */}
         <div className='absolute'>
-
             <div className='max-w-[275px] flex flex-col flex-wrap mt-16'>
                 <div>
                 {(() => {

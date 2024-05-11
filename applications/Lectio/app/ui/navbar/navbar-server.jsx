@@ -26,7 +26,7 @@ export default async function navbar_server() {
                     <span className="flex flex-row items-center hover:bg-slate-100 px-2 rounded-full"><i><BookmarkIcon className="w-8 h-8 my-3 mx-1"/></i> Opgaver</span>
                 </div>
             </Link>
-            <Link href="/"> 
+            <Link href="/beskeder"> 
                 <div>
                     <span className="flex flex-row items-center hover:bg-slate-100 px-2 rounded-full"><i><EnvelopeIcon className="w-8 h-8 my-3 mx-1"/></i> Beskeder</span>
                 </div>

@@ -2,4 +2,4 @@
 + Design dørsystem
 + Færdiggør Lectio-applikation
     +
-+ Skriv 
++ Opdater Gantt-Diagram
