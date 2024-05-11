@@ -15,8 +15,8 @@ const sampleMessage = {
 export default function besked() {
 
     return (
-        <div className="p-3 flex max-h-[104px] bg-slate-200 rounded-xl mt-5 text-[#424242]">
-            <div><Image src={ProfileImage} height={100} width={100} className="rounded-full h-20 w-20"></Image></div>
+        <div className="p-3 flex max-h-[104px] bg-slate-200 rounded-xl mt-5 text-[#424242] cursor-pointer">
+            <div><Image src={ProfileImage} height={100} width={100} className="rounded-full h-20 w-20" alt="placeholder text"></Image></div>
                 
             <div className="flex justify-between w-full">
                 <div className="pl-4 flex items-center">

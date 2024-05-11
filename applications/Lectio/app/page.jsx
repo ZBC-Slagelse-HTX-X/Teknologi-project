@@ -22,8 +22,8 @@ export default function Home() {
                 <li>Studie-, ordens- og eksamensreglement mv: <span className='text-blue-600'><Link href="#">kortlink.dk/2g8zm</Link></span></li>
             </ul>
           </div>
-          <div className="w-[400px] h-[200px] bg-white rounded-md p-4 m-4">3</div>
         </div>
+          <div className="w-[400px] h-[200px] bg-white rounded-md p-4 m-4">3</div>
     </main>
   )
 }
