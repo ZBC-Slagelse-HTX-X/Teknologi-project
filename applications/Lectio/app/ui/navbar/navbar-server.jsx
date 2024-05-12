@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { BookmarkIcon, BriefcaseIcon, CalendarDaysIcon, EnvelopeIcon, HomeIcon, KeyIcon } from '@heroicons/react/24/outline'
+import { BookmarkIcon, BriefcaseIcon, CalendarDaysIcon, EnvelopeIcon, HomeIcon, KeyIcon, DocumentTextIcon, TrophyIcon } from '@heroicons/react/24/outline'
 
 export default async function navbar_server() {
     return (
@@ -33,13 +33,13 @@ export default async function navbar_server() {
             </Link>
             <Link href="/"> 
                 <div>
-                    <span className="flex flex-row items-center hover:bg-slate-100 px-2 rounded-full"><i><HomeIcon className="w-8 h-8 my-3 mx-1"/></i> Dokumenter</span>
+                    <span className="flex flex-row items-center hover:bg-slate-100 px-2 rounded-full"><i><DocumentTextIcon className="w-8 h-8 my-3 mx-1"/></i> Dokumenter</span>
                 </div>
             </Link>
             
             <Link href="/"> 
                 <div>
-                    <span className="flex flex-row items-center hover:bg-slate-100 px-2 rounded-full"><i><CalendarDaysIcon className="w-8 h-8 my-3 mx-1"/></i> Karakterer</span>
+                    <span className="flex flex-row items-center hover:bg-slate-100 px-2 rounded-full"><i><TrophyIcon className="w-8 h-8 my-3 mx-1"/></i> Karakterer</span>
                 </div>
             </Link>
 
