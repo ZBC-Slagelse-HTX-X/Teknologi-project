@@ -5,13 +5,11 @@ export default async function Page( {params} ) {
     const data = JSON.parse(file);
     
     return (
-        <div className='flex flex-col h-screen'>
+        <div className='flex flex-col h-screen w-screen items-center justify-center'>
             <div> 
-                test: {params.slug}
+                Sidens ID: {params.slug}
             </div>
-            <div>
-                test: {data.test}
-            </div>
+
         </div>
     );
 }

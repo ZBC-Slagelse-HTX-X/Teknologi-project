@@ -60,11 +60,13 @@
     \input{section_1/section_1.tex} \newpage
     \input{section_2/section_2.tex} \newpage
     \input{section_3/section_3.tex} \newpage
+
+    \input{section_4/section_4.tex} \newpage
     \newpage
 %% Back matter
     \printbibliography[heading=bibintoc,title={Litteraturliste}]
     \begin{appendices} \newpage
-        \section{Projektbeskrivelse} \newpage
+        \section{Projektbeskrivelse \label{appendix:projektbeskrivelse}} \newpage
         \renewcommand*{\thepage}{A\arabic{page}}
         \includepdf[pages=-,delta=5 5,frame=true,landscape=true,nup=1x2,pagecommand={\thispagestyle{plain}}]{appendix/Project description/project-description.pdf}
         \renewcommand*{\thepage}{\arabic{page}}
