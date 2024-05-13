@@ -1,6 +1,115 @@
-\section{Produktudvikling}
-    \subsection{Lecio-renovering}
+\section{Produktudformning \label{sec:produktudformning}}
+    \subsection{Lectio rework}
+        \subsubsection{Overordnet}
+           Lectio-applikationen er skrevet i et populært framework, Next.js, som er en overbygninng på React-biblioteket til node.js, der tillader at man kan køre javascript på en server i stedet for i Chrome V8-motoren, som kun tillader at man køre javascript clientsided fremfor serversided.
 
-    \subsection{Smartdøre}
+           Selve renovering er rent faktisk en renovering i den forstand, 
+           at den reelle hjemmeside er blevet forbedret eller fornyet, 
+           men derimod er den blevet genopygget fra bunden af dog med henblik på at bevare den samme funktionalitet. 
+           Af den grund er det en mere korrekt betegnelse at kalde det et >>rework<<.
+        \subsubsection{Kodegennemgang}
+        Forneden er en komplet gennemgang af koden til Lectio-reworket.       
 
-    \subsection{Bookingsystem}
+        En filstruktur behøver æstetisk, letoverskuelig og forståelig både i menneske- og computertermer.
+        Således er der både de prædefinerede valg og de mere artistiske valg. 
+
+        Et Next.js-projekt (v.14) benytter deres nyligt lancerede app router-filstruktursystem, således skal filer struktures på følgende vis: man har >>Top-level files<<, der bruges til applikationkonfiguration, administration af filafhængigheder m.m.\cite{projstruct}
+        \begin{figure}[H]
+        \dirtree{%
+            .1 /.
+            .2 {\color{blue}{app}}.
+            .2 jsconfig.json.
+            .2 LICENSE.
+            .2 next.config.js.
+            .2 {\color{blue}{node\_modules}}.
+            .2 package.json.
+            .2 package-lock.json.
+            .2 postcss.config.js.
+            .2 {\color{blue}{public}}.
+            .2 REDME.md.
+            .2 tailwind.config.js.
+           }
+        \caption{Top-level filstrukturen for lectio-reworket. Mapperne er farvet blåt}
+        \label{fig:tlprojstruct}
+        \end{figure}
+
+        Forneden gennemgås top-level filerne og mapperne efter hensyn til forståelsen, der fremgår af figur (\ref{fig:tlprojstruct})
+
+        \paragraph{next.config.js} er en konfigurationsfil for Next.js, der tillader, at man konfigurer sprogets funktionalitet. 
+        
+        \paragraph{LICENSE-filen} er en fil, der indeholder projektets licens og brugsrettigheder, og da vores er et open source-projekt (open source vil sige, at alle kan tilgå det "gratis"), så bruges MIT-licensen, der tillader al brug af materialet til alle formål af alle individer. 
+        
+        \paragraph{jsconfig.json} er en projektafhængighed for javascriptsproget, og den indeholder kompileringsvariabler, få. 
+
+        \paragraph{app-mappen overordnet \label{pgh:app-ov}} indeholder reworkets reelle koder, i modsætning til de andre filer, der primært konfigurer koden og den gør kørbar. 
+        Neden for ses hvordan vi har struktureret app-mappen. 
+        \begin{figure}[H]
+            \dirtree{%
+                .1 app.
+                .2 {\color{blue}{dashboard}}.
+                .3 layout.jsx.
+                .3 page.jsx.
+                .2 {\color{blue}{lokaler}}.
+                .3 page.jsx.
+                .2 {\color{blue}{skema}}.
+                .3 page.jsx.
+                .3 skema.json.
+                .3 {\color{blue}{[slug]}}.
+                .2 {\color{blue}{ui}}.
+                .3 {\color{blue}{dashboard}}.
+                .3 {\color{blue}{navbar}}.
+                .3 {\color{blue}{skema}}.
+                .3 globals.css.
+               }
+            \caption{Filstrukturen for app mappen. Mapperne er farvet blåt}
+            \label{fig:tlprojstruct}
+            \end{figure}
+        I Next.js, er alle mapper i /app-mappen, det er et subdomain, når det indeholder en >>page.jsx<<-fil. Men hvad er et subdomain? Før vi kan forstå det, skal vi se på, hvad er en URL? URL står for 
+        Uniform Resource Locater. En URL er struktureret med først en protokol, som for web ressourcer er enten HTTP (Hypertext Transfer Protocol) eller HTTPS (HTTP Secure). Andre protokoller inkludere f.eks. FTP som er en >>File Transfer Protocol<<  
+        efter protokollen kommer domænenavnet. Domænenavnet referer til en ip-adresse.  Det vil sige, at når man søger efter et domænenavn, søger man i en DNS-server (Domain Name System) og finder den tilknyttede ip-adresse,
+        som sender den data, som hjememsiden består af til browseren. Efterfølgende kan der være subdomains der er alt efter domainenavnet plus et /.
+
+        \begin{figure}[H]
+        \begin{mdframed}
+        \begin{equation*}
+        \stackrel{\text{Internetprotokol}}{\overline{\text{https}}}:// \stackrel{\text{domænenavn}}{\overline{\text{noget.dk}}} / \stackrel{\text{subdomæne}}{\overline{\text{nogetandet}}}
+        \end{equation*}
+        \begin{center}
+            Uniform Ressource Locater
+        \end{center}
+        \end{mdframed}
+        \caption{Viser opbygningen af en URL}
+        \end{figure}
+        \newpage
+        
+        \paragraph{package.json} indeholder modulafhængigheder, der er hentet via NPM (Node package manager), der udnytter node.js. Forneden er et udsnit fra dette, der viser >>dependencies<<:
+        \begin{lstlisting}
+            "dependencies": {
+                "@heroicons/react": "^2.0.18",
+                "@vercel/postgres": "^0.5.1",
+                "bcrypt": "^5.1.1",
+                "current-week-number": "^1.0.7",
+                "dotenv": "^16.3.1",
+                "heroicons": "^2.0.18",
+                "next": "14.0.3",
+                "react": "^18",
+                "react-dom": "^18",
+                "react-draggable": "^4.4.6"
+              }, 
+        \end{lstlisting}
+
+        Mod venstre kan man se navnet på NPM-pakken. Efter kolonnet til højre ses versionen af denne. Næsten alle dem, der fremgår, bliver udnyttet, dog er der få som blot er resultatet af skabelonbrug. Denne skabelon er tiltænkt til fremtidig brug, så den kan anvendes til flere formål. Skabelonen kan også tilgås via GitHub.
+
+        Her er en kort gennemgang af nogle af pakkerne, der er hentet via NPM, som vi bruger, der tilføjer ekstra funktionalitet:
+        \begin{itemize}
+        \item heroicons - Anvendes forskellige steder i koden, hvor ikoner anvendes (se sektion (\ref{sec:designvalg}) ift. hvorfor ikoner anvendes). Heroicons fungerer således, at ønskede ikoner kan importeres fra heroicon-bibliotektet, hvorefter de kan indsættes i web-applikationen
+        \item current-week-number - Anvendes til at fremkalde det nuværende ugetal via en applikation programm. Det i vores tilfælde til at indsætte ugetallet i skemabrikken. 
+        \end{itemize}
+
+        \paragraph{app-mappen}
+            Vi startede med at gennemgå overordnet app-mappen (\ref{pgh:app-ov}), her er en dybdegående genemgang 
+        \subsubsection{Designvalg \label{sec:designvalg}}
+        \subsection{Smartdøre}
+        \subsubsection{Software}
+        \subsection{Hardware}
+    \subsection{Booking system}
