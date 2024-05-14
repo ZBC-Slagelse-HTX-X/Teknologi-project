@@ -4,6 +4,7 @@ import Besked from "../ui/beskeder/besked";
 import { MagnifyingGlassIcon, PlusIcon } from '@heroicons/react/24/outline'
 import BeskedPopup from "../ui/beskeder/beskedPopup";
 import { useState } from "react";
+import Link from "next/link";
 
 export default function Page() {
     const [popup, setPopup] = useState(false);
@@ -24,18 +25,6 @@ export default function Page() {
                 </div>
 
                 <div className="m-2">
-
-                {(() => {
-                    if (popup) {
-                            <BeskedPopup />
-                    } else {
-                            
-                    }
-
-
-                })
-                }
-
                 <Besked />
                 <Besked />
                     

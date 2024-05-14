@@ -1,95 +1,38 @@
-\section{Projektudvikling \label{sec:Projektudvikling}}
-    \subsection{Lectio renovering}
-        \subsubsection{Overordnet}
-           Lectio-applikationen er skrevet i et populært framework, Next.js, som er en overbygninng på React-biblioteket til node.js, der tillader at man kan køre javascript på en server i stedet for i Chrome V8-motoren, som kun tillader at man køre javascript clientsided fremfor serversided.
+\section{Problemanalyse \label{sec:problemanalyse}}
+Problemanalysen tager udgangspunkt i nøgleproblemet spildtid jf. projektbeskrivelsen i appendikssektionen (\ref{appendix:projektbeskrivelse}). 
 
-           Selve renovering er rent faktisk en renovering i den forstand, 
-           at den reelle hjemmeside er blevet forbedret eller fornyet, 
-           men derimod er den blevet genopygget fra bunden af dog med henblik på at bevare den samme funktionalitet. 
-           Af den grund er det en mere korrekt betegnelse at kalde det et >>rework<<.
-        \subsubsection{Kodegennemgang}
-        Forneden er en komplet gennemgang af koden til Lectio-reworket.       
 
-        En filstruktur behøver æstetisk, letoverskuelig og forståelig både i menneske- og computertermer.
-        Således er der både de prædefinerede valg og de mere artistiske valg. 
+\subsection{Problemtræ}
+Forneden har vi fremstillet et problemtræ, der viser nogle af årsagerne til tidsspild og nogle af virkningerne.
+\begin{figure}[H]
+    \centering
+    \resizebox{\columnwidth}{!}{\includegraphics[angle =90]{assets/problemtrae.jpg}}
+    \caption{Viser problemtræet, der blev anvendt i problemanalysen.}
+\end{figure}
+Et af de ineffektive systemer, vi kom i tanke om, er Lectio-applikationen, hvorefter vi har informationssøgt om emnet. Det var ikke muligt at finde nogle reele artikler om tidssplid med Lectio-applikationen, 
+Da har vi forhørt os kvalitativt og snakket med flere medstuderende og flere underviserer (interessenter) som benytter sig at Lectio i deres dagligdag.
+\subsection{Kvalitativ metode}
+Forneden er vores overordnet indtryk af, hvordan de folk, vi har snakket med, opfatter lectio:
+De har alle udtalt sig om Lectios unødvændigt komplicerede designvalg, forældede udseende og mangler. Vi snakkede bl.a. Med en underviser som udtrykte sin fustrattion over 
+at det nuværende Lectio kun kan uploade et dokument ad gangen. Dette fandt vi meget mærkeligt, da vi har en udvidet viden om webudvikling, og ergo ved vi at sådan en funktion (multiupload) er utrolig nem at 
+implementere og stod tilbage uforstående for, at Lectio ikke havde mulighed for så basal funktionalitet som det. Det kan også hurtigt tage fx. 10 sekunder at navigere hen til en fil og derefter uploade den, så hvis man vil uploade fx. >>20 filer<<, så tager dette altså 200 sekunder tilsvarende til 3 minut og 20 sekunder. 
 
-        Et Next.js-projekt (v.14) benytter deres nyligt lancerede app router-filstruktursystem, således skal filer struktures på følgende vis: man har >>Top-level files<<, der bruges til applikationkonfiguration, administration af filafhængigheder m.m.\cite{projstruct}
-        \begin{figure}[H]
-        \dirtree{%
-            .1 /.
-            .2 {\color{blue}{app}}.
-            .2 jsconfig.json.
-            .2 LICENSE.
-            .2 next.config.js.
-            .2 {\color{blue}{node\_modules}}.
-            .2 package.json.
-            .2 package-lock.json.
-            .2 postcss.config.js.
-            .2 {\color{blue}{public}}.
-            .2 REDME.md.
-            .2 tailwind.config.js.
-           }
-        \caption{Top-level filstrukturen for lectio-reworket. Mapperne er farvet blåt}
-        \label{fig:tlprojstruct}
-        \end{figure}
+\subsection{HV-modellen}
+Herefter er HV-modellen i sammenspil med den kvalitative undersøgelse i forrige kapitel, blevet anvendt til at få en ide om handlingsplanen, forbrugernes mangler og dermed potentielle produktbehov:
+\paragraph{Hvad?}
+    Det man skal gøre er altså at implementere basale QOL-features (Quality-of-life; rare features at have) ved at lave et rework af Lectio. På nuværende tidspunkt er vi ikke klar over, hvem der maintainer Lectio-applikationen, ej heller hvilke tiltag de gør for at modernisere denne.
+\paragraph{Hvorfor?}
+    Det skal gøres, så man i fremtiden kan spare tid og tankekraft ved at gøre Lectio til en bedre IT-løsning; et system, der gør det attraktivt at anvende til at centralisere informationsdeling, således at brugere ikke søger afsides og udliciterer opgaven til 700 andre tjenester samt gør det nemtoverskueligt for brugeren at orientere sig; hvilket gør at læringen kan komme i fokus, fremfor IT-stads. 
+\paragraph{Hvem?}
+    Hvem bør gør det? Det er selvfølgelig Lectio
+\paragraph{Hvordan?}
+    De bør gøre det ved at anvende moderne webaplikkationsbyggeteknik; ændre deres techstack og designfilosofi.
 
-        Forneden gennemgås top-level filerne og mapperne efter hensyn til forståelsen, der fremgår af figur (\ref{fig:tlprojstruct})
+\subsection{Envidere kritik af Lectios designfilosofi}
+    Alle knapperne er små, og der er for mange af dem, det er for komplekst og der er meget redundans; mange måder, hvorpå man kan opnå samme resultater. 
+    Farvevalget er også grimt; det ser visuelt forældet ud, hvilket ikke just inspirerer en gejst host kunden.
+    Endvidere kan Lectio overhovedet ikke scalerer, altså når man ændre skærmstørelsen forbliver Lectio samme størelse. Dette er et red flag for hjemmesider da korrekt websidedesignfilosofi
+    siger at hjemmesider skal være responsive.
 
-        \paragraph{next.config.js} er en konfigurationsfil for Next.js, der tillader, at man konfigurer sprogets funktionalitet. 
-        
-        \paragraph{LICENSE-filen} er en fil, der indeholder projektets licens og brugsrettigheder, og da vores er et open source-projekt (open source vil sige, at alle kan tilgå det "gratis"), så bruges MIT-licensen, der tillader al brug af materialet til alle formål af alle individer. 
-        
-        \paragraph{jsconfig.json} er en projektafhængighed for javascriptsproget, og den indeholder kompileringsvariabler, få. 
-
-        app-folderen indeholder reworkets reelle koder, i modsætning til de andre filer, der primært konfigurer koden og den gør kørbar. 
-        Neden for ses hvordan vi har struktureret app-mappen. 
-        \begin{figure}[H]
-            \dirtree{%
-                .1 app.
-                .2 {\color{blue}{dashboard}}.
-                .3 layout.jsx.
-                .3 page.jsx.
-                .2 {\color{blue}{lokaler}}.
-                .3 page.jsx.
-                .2 {\color{blue}{skema}}.
-                .3 page.jsx.
-                .3 skema.json.
-                .3 {\color{blue}{[slug]}}.
-                .2 {\color{blue}{ui}}.
-                .3 {\color{blue}{dashboard}}.
-                .3 {\color{blue}{navbar}}.
-                .3 {\color{blue}{skema}}.
-                .3 globals.css.
-               }
-            \caption{Filstrukturen for app mappen. Mapperne er farvet blåt}
-            \label{fig:tlprojstruct}
-            \end{figure}
-        I Next.js, er alle mapper i /app mappen et subdomain når de har en >>page.jsx<< fil i sig. Men hvad er et subdomain? Før vi kan forstå det, skal vi se på, hvad er en URL? URL står for 
-        Uniform Resource Locater. En URL er struktureret med først en protokol som for web ressourcer er enten HTTP (Hypertext Transfer Protocol) eller HTTPS (HTTP Secure). Andre protokoller inkludere f.eks. FTP som er en >>File Transfer Protocol<<  
-
-        package.json indeholder modulafhængigheder, der er hentet via NPM (Node package manager), der udnytter node.js. Forneden er et udsnit fra dette, der viser >>dependencies<<:
-        \begin{lstlisting}
-            "dependencies": {
-                "@heroicons/react": "^2.0.18",
-                "@vercel/postgres": "^0.5.1",
-                "bcrypt": "^5.1.1",
-                "current-week-number": "^1.0.7",
-                "dotenv": "^16.3.1",
-                "heroicons": "^2.0.18",
-                "next": "14.0.3",
-                "react": "^18",
-                "react-dom": "^18",
-                "react-draggable": "^4.4.6"
-              }, 
-        \end{lstlisting}
-
-        Mod venstre kan man se navnet på NPM-pakken. Efter kolonnet til højre ses versionen af denne. Næsten alle dem, der fremgår, bliver udnyttet, dog er der få som blot er resultatet af skabelonbrug. Denne skabelon er tiltænkt til fremtidig brug, så den kan anvendes til flere formål. Skabelonen kan også tilgås via GitHub.
-
-        Her er en kort gennemgang af nogle af pakkerne, vi bruger, som tilføjer ekstra funktionalitet:
-        \paragraph{heroicons} - Anvendes forskellige steder i koden, hvor ikoner anvendes (se sektion (\ref{sec:designvalg}) ift. hvorfor ikoner anvendes). heroicons fungerer således, at de ønskede ikoner importeres
-
-        \subsubsection{Designvalg \label{sec:designvalg}}
-        \subsection{Smartdøre}
-        \subsubsection{Software}
-        \subsection{Hardware}
-    \subsection{Booking system}
+\subsection{Problemformulering \label{sec:problemformulering}}
+    Det er et problem, at Lectios website er forældet, da dette resulterer i, at den ikke effektivt kan overlevere information til sine forbrugere, ej heller overskueligt intergeres med jf. problemanalysen (\ref{sec:problemanalyse}), hvorfor den ikke er berettiget i sin eksistens jf. Lectios eget informationsark, hvor de eksplicit udpenslerer dette som Lectios bærende hovedformål\cite{lectioark}.

@@ -1,6 +1,7 @@
 import './skema.css';
 import { ChatBubbleOvalLeftIcon } from "@heroicons/react/24/outline";
 import { PencilSquareIcon } from "@heroicons/react/24/outline";
+import Link from 'next/link'
 
 
 export default function skemaModule( args ) {
@@ -11,6 +12,7 @@ export default function skemaModule( args ) {
         );
     } else {
         return (
+        <Link href={`/skema/${args.id}`}>
         <div className="bg-[#9CCEFF] border-l-[10px] border-l-[#1E90FF] p-4 rounded-lg max-w-[275px] max-h-[88px] flex justify-between cursor-pointer hover:opacity-80 group">
             
             <div className="flex flex-col text-[#0D3F70] justify-center">
@@ -81,7 +83,8 @@ export default function skemaModule( args ) {
                     })()}
                 </div>
             </div>
-        </div> 
+        </div>
+        </Link>
         );
     }
 }
