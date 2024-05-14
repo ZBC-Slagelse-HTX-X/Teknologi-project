@@ -5,7 +5,7 @@ import Navbar_server from './ui/navbar/navbar-server'
 
 const inter = Inter({ subsets: ['latin'] })
 
-export default function DashboardLayout({ children }) {
+export default function Layout({ children }) {
 
   return ( 
     <html lang="en">
