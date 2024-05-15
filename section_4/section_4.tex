@@ -3,10 +3,11 @@
     Efter som det nuværende Lectio bliver anvendt af en stor del af landets gymnasier, er vores målgruppe derved alle landets gymnasier--nemlig også potentielle kunder (gymnasier) der
     muligvis ville være interesseret i at anvende vores Lectio applikation. 
     
+    Målgruppen for RFID-Systemet er ligeledes gymnasielle udannelser.
 
     \subsection{Kravspecifikation}
+    \subsubsection{Krav til Lectio rework}
     Kravene for vores applikation er følgende: 
-    
     \begin{itemize}
         \item Applikationen skal have alle de samme core-features som det originale Lectio
         \item Applikationen skal være let overskuelig og nemt orienterbart for brugerne
@@ -20,9 +21,26 @@
             \item Et komplet dørsystem som låses/låses op med RFID kort (på sigt ens mobiltelefon). 
         \end{itemize}
     \end{itemize}
+    
+    \subsubsection{Krav til RFID-System}
+    Kravene til RFID-Systemet er følgende:
+    \begin{itemize}
+        \item Systemet skal gøre det nemt for elever at booke lokaler de skal bruge til undervisningsformål.
+        \item Systemet skal hjælpe med at forbedre fraværsregistrering og spare tid i timerne. 
+        \item Systemet skal gøre det muligt i tilfælde af brand på skolens premis at sikre flugtveje. 
+        \item Systemet skal gøre det muligt i tilfælde af brand at have styr på alle elever.
+        \item Systemet skal være nemt at bruge og ikke skabe forvirring.
+    \end{itemize}
+    
 
     \subsection{Kort om konkurrenter}
-        Lectio har ingen umiddelbare konkurrenter, vi kender, udover Aula, men det henvender sig til folkeskoler og har ikke envidere fildelingsinfrastruktur. Vi tror også, at problemet med Lectio stammer fra det faktum, at Lectio har et de-facto monopol på IT-løsninger målrettet gymnasier.
+        Lectio har ingen umiddelbare konkurrenter, vi kender, udover Aula, men det henvender sig til 
+        folkeskoler og har ikke envidere fildelingsinfrastruktur. Vi tror også, at problemet med Lectio 
+        stammer fra det faktum, at Lectio har et de-facto monopol på IT-løsninger målrettet gymnasier.
+        \newline
+        \newline
+        Der findes allerade utallige virksomheder som levere døre med RFID-Låse, dog kan disse ikke implementeres med
+        en online applikation som vores.
 
     \subsection{Løsningsforslag}
         \subsubsection{Lectio rework}
@@ -54,3 +72,4 @@
             \resizebox{!}{10cm}{\includegraphics{assets/lectio_lokaler_skitse.jpg}}
             \caption{Viser Skitse af Booking siden på samme webapplikation som Lectio Reworket}
         \end{figure}
+        
