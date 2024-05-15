@@ -1,5 +1,0 @@
-* To-Do-lits
-+ Design dørsystem
-+ Færdiggør Lectio-applikation
-    +
-+ Opdater Gantt-Diagram
