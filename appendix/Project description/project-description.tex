@@ -85,22 +85,17 @@ Ergo vælger vi at arbejde videre med tidspildsproblematikken, da denne er mest 
 
     \begin{landscape}
 \section{Tidsplan}
-    \begin{figure}[H]
-        \resizebox{\columnwidth}{!}{%
-        \begin{ganttchart}{1}{60}
-            \gantttitle{2024}{60} \\
-            \gantttitle{Marts}{30} \gantttitle{April}{30} \\
-            \gantttitlelist{1,...,30}{1} \gantttitlelist{1,...,30}{1}\\
-            \ganttgroup{Forberedelse}{1}{6} \\
-            \ganttbar{Projektbeskrivelse}{1}{6} \\
-            % \ganttlinkedbar{Task 2}{3}{7} \ganttnewline
-            % \ganttmilestone{Milestone}{7} \ganttnewline
-            % \ganttbar{Final Task}{8}{12}
-            % \ganttlink{elem2}{elem3}
-            % \ganttlink{elem3}{elem4}
-        \end{ganttchart}}
-        \caption{Viser Gantt-Diagram over vores foreløbige tidsplan}
-    \end{figure}
+\begin{figure}[H]
+    \centering
+    \begin{ganttchart}[vgrid,hgrid,time slot format=little-endian,expand chart=\columnwidth]{1.3.2024}{14.5.2024}
+        \gantttitlecalendar{year, month=name, week=9, day} \ganttnewline
+        \ganttgroup{Forberedelse}{1.3.2024}{7.3.2024} \\
+        \ganttgroup{Produktudvikling}{7.3.2024}{14.5.2024} \\
+        \ganttgroup{Rapportudformning}{7.3.2024}{14.5.2024} \\
+        % \ganttlink{elem3}{elem4}
+    \end{ganttchart}
+    \caption{Viser Gantt-Diagram over vores foreløbige tidsplan. Se appendiks med projektbeskrielse.}
+\end{figure}
 \end{landscape}
 \end{document}
 

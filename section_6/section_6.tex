@@ -7,7 +7,39 @@
         Det er gratis at anvende services som Vercel indtil et vist serverload opnås, hvorefter det koster penge. Jf. deres hjemmeside\cite{vercelprincing} kan hjemmesiden kun tigås en million gange per måned ved gratis abonnoment, ti millioner ved 20\$ per måned, men da vi forventer, at servicere et konservativt estimat på 50.000 gymnasieelever (baseret på Danmarks statistik \cite{ungudd}) om dagen, vil dette hurtigt blive overskredet, ergo er der tale om en unik dataaftale, hvorfor det nok bliver nok bliver markant dyre, men vil garanteret være billigere i sidste ende.
 
     \subsection{RFID-løsning /  låsemekanismesystem}
-        RFID-låseløsningsmekanismesystemet skal først videreudvikles i Danmark, indtil den er færdigklar, hvorefter produktionen skal udliciteres til en fabrik i Kina.
+    \subsubsection{Fremtidig Plan}
+    Da vi startede med projektet havde jeg meget høje forventninger til hvor meget jeg kunne nå at lave, selvom de ikke blev en realitet,
+    har jeg stadigvæk tænkt mig at dele mine ideer. 
+    \newline
+    \newline
+    Vores oprindelige ide var at bygge hele systemet, både med dørlukker, RFID scanner, og et komplet software system med database der ville havde givet elever og lærere
+    mulighed for at booke lokaler og se hvem der var tilstede. Vores plan for at bygge døren var at købe en billig branddør,
+    vi ville derefter havde opsæt en "skelet" dør (en dør som ikke sider fast i en væg), så vi ville have haft mulighed for at fremvise, hvordan produktet ville virke i praksis.
+    vi havde tænkt os at bestille en elektronisk dørlukker, som vi ville havde koblet op til vores ESP32 i vores RFID kasse,
+    vores plan var at trække 12v (Ledninger med 12 volts spænding) for at undgå højstrøms lovgivningen da 12v ledninger ikke indgår under denne lovgivning,
+    dette ville havde signifikant sænket omkostninger for opsætning af systemet på skolen. Vi havde tænkt os at benytte et relæ (er et mekanisk kontakt),
+    til at styre både dørlukkeren og den lås som vi ville havde sat i dørkarmen for at undgå kompliceret installation i dørene,
+    også i forhold til tilfælde, hvor det kunne blive nødvendigt at udskifte døre. Dette ville også gøre designet mere simpelt og nemmere
+    for os at konstruere. Desværre nåede vi aldrig så langt med vores planer, dette skyldes en del grunde men jeg har tænkt mig at nævne
+    et par af de lidt større fejl og udfordringer der var skyld i at det ikke blev en realitet.
+    \begin{enumerate}
+        \item \textbf{For store ambitioner}\
+            I starten af projektet havde vi en masse ideer som vi gerne ville føre til livs, dette resulterede i at størstedelen af vores tid blev
+            brugt på at finde produkter og undersøge installations metoder ud fra vores meget store ambitioner, dette er jo nødvendigvis ikke en
+            dårlig ting, men det var skyld i at vi i det første stykke tid ikke kom i gang med den den indledende konstruktion
+            da vi var fokuseret på alle de mange ting vi ville. Da det så endeligt gik op for os at vi var ved at løbe tør for
+            tid, havde vi allerede brugt en signifikant mængde af hele projekttiden.
+        \item \textbf{For lidt prototyping}\
+            Vi brugte rigtigt meget tid på at undersøge og prøve at udvikle et perfekt produkt før vi vidste om det overhovedet ville virke i
+            praksis, hvis vi havde fokuseret mere på at lave nogen prototyper og eksperimentere i starten havde vi realiseret nogen af de
+            design fejl der senere blev åbenlyse da vi lavede vores første prototype. Dette resulterede i at da vi endelig gik i gang med at
+            konstruere og teste vores første prototype var vi nød til at gå tilbage til tegnebrættet og retænke vores design, hvilket
+            resulterede i at der var mange ting vi ikke nåede i mål med da vi endeligt havde et fungerende design.
+    \end{enumerate}
+    
+    \subsubsection{Produktion}
+    bla bla
+
     \subsection{Teknologianalyse}
         Produktionen og veligholdesen af Lectio-rework applikation skal udliciteres til softwareudviklere fra Indien.
         Som udgangspunk skal hovedudviklingen af Lectio-reworket forgå i Danmark. I Danmark er infrastrukturen helt fin, og den er god nok i Indien til vores formål. Kulturen i Indien
