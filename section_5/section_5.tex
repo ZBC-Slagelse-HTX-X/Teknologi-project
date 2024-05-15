@@ -68,7 +68,7 @@
             \begin{center}
             \includegraphics{assets/moduleElement.png}
             \end{center}
-            \caption{Viser en modulbrik m. tilhørende CSS-kode (notér at dette ikke er den komplete kode [tjek bilag \ref{appendix:modulbrikkode}] til brikken, dog godt nok for at illustrere vores pointe) \label{fig:modulbrikfostaaelse}}
+            \caption{Viser en modulbrik m. tilhørende CSS-kode (notér at dette ikke er den komplette kode [tjek bilag \ref{appendix:modulbrikkode}] til brikken, dog godt nok for at illustrere vores pointe) \label{fig:modulbrikfostaaelse}}
         \end{figure}
         \paragraph{app-mappen overordnet \label{pgh:app-ov}} indeholder reworkets reelle koder, i modsætning til de andre filer, der primært konfigurer koden og den gør kørbar. 
         Neden for ses hvordan vi har struktureret app-mappen. 
@@ -291,3 +291,52 @@ var currentWeekNumber = require('current-week-number');
         \end{figure}
 \subsection{Bookingsystem}
     Vi har valgt at fjerne bookingsystems-delen for dette produkt; dog er den skidegod ide, og det var blevet en del af produktet. Det er af rent pragmatiske årsager, at vi vælger ikke at udvikle systemet, det havde garanteret været sjovt. Skitserne over dette fremgår af appendiks \ref{appendix:arbejdsskitser}.
+
+\subsection{RFID-System}
+    \subsubsection{Overordnet}
+    Som del af vores teknologiprojekt fandt vi frem til at vi kunne forbedre studiemiljøet ved at implementere døre på skolen der benytter sig af RFID (Radio-frequency identification). 
+    Og udlevere studiekort til elever som de kan benytte sig af til f.eks. at åbne bookede lokaler eller til hurtigere at tage fravær,
+    og i tilfælde af brand ville der også være mulighed for at låse alle døre op til potentielle flugtveje. disse er alle ting som er med til at modernisere IT-Infrastrukturen på skolen, 
+    og derved forbedre studiemiljøet for elever.
+
+    \subsubsection{Konstruktion}
+    Da vi gik i gang med at planlægge konstruktionen af produktet kom vi ret hurtigt frem til at det ikke ville være en mulighed at bygge en dør med scanneren på, vi besluttede derfor at,
+    vi ville konstruere en primitiv prototype i stedet for, som en form for repræsentation af hvad det rigtige produkts egenskaber ville være. vi har dog lavet alle overvejelserne til det rigtige produkt.
+    den prototype er placeret i en gammel kasse vi havde, da det stadigvæk fint repræsenterer funktionaliteten af produktet, inde i kassen er der et stort breadboard, esp-wroom32 (devkitC variant),
+    en lille powersupply der bruger et lithium-ion batteri, 2 led'er, og en RFID-RC522 scanner. disse komponenter er alt der der skal til for at få selve hardware delen til at virke. 
+    for at korrekt sammensætte disse komponenter fulgte vi dokumentationen for RFID-RC522 scanneren som vi fandt online, efterfølgende tilføjede vi de ting der skulle til for at få prototypen til at repræsentere
+    det vores produkt skulle kunne. opsætningen af esp32'eren var lidt udfordrene men fandt heldigvis nogen guides der beskrev nogle hovedpunkterne i forhold til opsætning.
+    
+    men før vi gik i gang med at bygge selve kassen havde vi lavet et diagram i EasyEda der viste hvordan at prototypen ville komme til at se ud.'
+    
+    \begin{figure}[H]
+        \centering
+        \includegraphics{assets/internalDiagram.png}
+        \caption{Internt Diagram RFID-System}
+    \end{figure}
+    
+    som det kan ses på skitsen har vi planlagt hvordan de forskellige komponenter skulle kobles sammen før vi gik i gang med at bestille delene hjem til produktet, selve udformningen og konstruktionen af produktet tog ikke særligt lang tid.
+    den mest tidskrævende del af processen var at regne ud hvordan vi ville lave dør systemet, i starten overvejede vi at lave den som en knap på en app man kunne bruge til at låse døren op,
+    men kom frem til at det var nemmere både produkt mæssigt men også for brugeren hvis døren benyttede sig af RFID da du der både har mulighed for at bruge en app på din Telefon, og et kort/chip til at låse døren op.
+
+
+    \subsubsection{Kodegennemgang}
+
+    Programmeringen af Esp'en viste sig også at være lidt af en udfordring da efter vi havde koblet alting sammen, kunne vi ikke få lov til at uploade kode til den. dette viste sig at tage noget tid at løse,
+    så lad og gå igennem min process med at løse det.
+
+    \begin{enumerate}    
+        \item Vores første problem var at Arduino IDE ikke havde muligheden for at vælge den ESP32 som vi brugte, vi ledte en del tid efter nogen der havde en løsning, og kom frem til at det er fordi at den ESP32 vi bruger,
+            ikke har sin egen kategori når du vælger hvilket board (Arduinoen) du bruger, men at den går ind under "Dev Module" kategorien.
+
+        \item Det andet problem vi stødte på var at vi ikke kunne se den COM port (Communications/Serial Port) som min ESP32 kørte over, dette skyldes at vi manglede en driver der hedder "CP210x Universal Windows Driver",
+            den gør det muligt for min computer at åbne de COM porte vi skulle benytte, og da den driver ikke var på min computer kunne vi ikke koble min ESP32 op.
+        
+        \item Det sidste problem vi stødte på var at selvom vi var koblet op til min ESP32 blev den ved med at give os fejlkoden "Wrong boot mode detected, device needs to be in download mode", dette forvirrede os lidt,
+            da vi ikke var sikker på hvordan vi havde mulighed for at ændre hvilket boot mode min ESP32 var i. Dette problem var dog relativt nemt at løse da det viste sig at man skulle holde boot knappen på Esp'en nede,
+            når man uploadede ting til den.
+    \end{enumerate} 
+        
+        Efter vi havde overkommet de initiale udfordringer med Programmeringen, gik det faktisk overraskende nemt, det lykkedes os at finde et "Library" der havde eksempel kode der mindede meget om det vi havde brug for,
+        til at få min scanner til at virke. \newline
+        Se Bibliografi for kilder brugt til udvikling af ovenstående, \cite{ardDrive}, \cite{ardrfid}, \cite{ardProg}

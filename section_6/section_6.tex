@@ -8,8 +8,8 @@
 
     \subsection{RFID-løsning /  låsemekanismesystem}
     \subsubsection{Fremtidig Plan}
-    Da vi startede med projektet havde jeg meget høje forventninger til hvor meget jeg kunne nå at lave, selvom de ikke blev en realitet,
-    har jeg stadigvæk tænkt mig at dele mine ideer. 
+    Da vi startede med projektet havde vi meget høje forventninger til hvor meget vi kunne nå at lave, selvom de ikke blev en realitet,
+    har vi stadigvæk tænkt mos at dele vores ideer. 
     \newline
     \newline
     Vores oprindelige ide var at bygge hele systemet, både med dørlukker, RFID scanner, og et komplet software system med database der ville havde givet elever og lærere
@@ -20,7 +20,7 @@
     dette ville havde signifikant sænket omkostninger for opsætning af systemet på skolen. Vi havde tænkt os at benytte et relæ (er et mekanisk kontakt),
     til at styre både dørlukkeren og den lås som vi ville havde sat i dørkarmen for at undgå kompliceret installation i dørene,
     også i forhold til tilfælde, hvor det kunne blive nødvendigt at udskifte døre. Dette ville også gøre designet mere simpelt og nemmere
-    for os at konstruere. Desværre nåede vi aldrig så langt med vores planer, dette skyldes en del grunde men jeg har tænkt mig at nævne
+    for os at konstruere. Desværre nåede vi aldrig så langt med vores planer, dette skyldes en del grunde men vi har tænkt os at nævne
     et par af de lidt større fejl og udfordringer der var skyld i at det ikke blev en realitet.
     \begin{enumerate}
         \item \textbf{For store ambitioner}\
@@ -38,7 +38,37 @@
     \end{enumerate}
     
     \subsubsection{Produktion}
-    bla bla
+    Da vi startede med at konstruere vores prototype, kom vi frem til at det ville være nemmest for os at designe vores initiale prototype ud fra en allerede fungerende guide. Dette gav os mulighed for at lave en virkende
+    prototype før vi bevægede os videre med at forbedre prototypen. Som en del af dette lavede vi også en håndfuld skitser som der kan ses nedenfor, de illustrerer vores ide process i perioden hvor vi var i gang med at prototype vores produkt,
+    nu kommer der en detajleret gennemgang af hvordan vi konstruerede vores produkt.
+    \begin{figure}[H]
+        \centering
+        \resizebox{!}{13cm}{\includegraphics{assets/design_rfid-system_skitse.jpg}}
+        \caption{Endelig Skitse RFID-System}
+    \end{figure}
+    \newpage
+    \begin{enumerate}
+        \item \textbf{Sammenkobling af ESP32 og RFID-RC522}
+            Det første skridt i vores produktion af vores produkt var at vi skulle have sammenkoblet vores indkøbte ESP32 og RFID-RC522, dette gjorde vi ved at benytte os af et såkaldt 
+            breadboard, det er et værktøj der er ekstrem nyttig når man er i gang med en udviklingsprocess da det giver dig mulighed for at sammenkoble dine komponeneter uden at du skal til 
+            at lode det sammen, dette er nemlig ekstremt nyttigt fordi det giver dig mulighed for at prøve forskellige sammensætninger af dine komponenter uden af du skal sidde og lode og 
+            aflode de forskellige komponenter du bruger. ved hjælp af det her breadboard eksperimenterede vi så med forskellige ideer som vi havde haft, det vi kom til sidst frem til at det 
+            ville virke bedst, hvis vi monterede alle vores komponenter på breadboarded med nogle stive ledninger så at vi havde mulighed for at få præcise længder på vores ledninger hvilket 
+            gjorde det muligt for os at gøre den interne del af vores produkt mere overskueligt.
+
+        \item \textbf{Strømforsyning} 
+            Vi besluttede os for at benytte en strømforsyning(et 3,7v 2600mAh lithium-ion batteri) dette gav os muligheden for at komme vores system ind i en kasse efter at vi havde programmeret
+            den med det kode der er nødvendigt for at vise ideen med produktet.
+
+
+        \item \textbf{Output Wiring}
+            I vores endelige protoype benytter vi os af to led dioder til at vise at vores system kan registere RFID-tags og også kende forskel på dem, dette er det der kommer til at give os mulighed 
+            for at lave et fraværsystem og lokalebooking, for hvis vi udsteder et elevkort til eleverne på skolen vil vi have mulighed for at kende forskel på hvert enkle elevs unikke kort-id og derved 
+            give dem adgang til forskellige lokaler(dem de har booket) og registere dem i fraværssystemet om morgnen nå de tjekker ind med deres kort(eller telefon).
+
+    \end{enumerate}
+
+                                                                         
 
     \subsection{Teknologianalyse}
         Produktionen og veligholdesen af Lectio-rework applikation skal udliciteres til softwareudviklere fra Indien.
